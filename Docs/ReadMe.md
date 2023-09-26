@@ -1,4 +1,4 @@
-This document provides an overview of my methodology and technical details regarding Kaggle's Predict Future Sales competition.
+This document provides an overview of my methodology and technical details regarding Kaggle's Predict Future Sales project.
 
 # Objective 
 The objective of this project is to forecast future sales #DataScience, tackling the challenging time-series dataset comprised of daily sales data.
