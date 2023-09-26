@@ -4,7 +4,7 @@ This document provides an overview of my methodology and technical details regar
 The objective of this project is to forecast future sales #DataScience, tackling the challenging time-series dataset comprised of daily sales data.
 
 # Motivation
-In this contest, I engaged with a demanding time-series dataset encompassing daily sales data, generously furnished by one of Russia's largest software enterprises - 1C Company. The aim was to forecast the total sales for each product and store in the forthcoming month. Through participating in this competition, I had the opportunity to apply and refine my data science skills.
+In this project, I engaged with a demanding time-series dataset encompassing daily sales data, generously furnished by one of Russia's largest software enterprises - 1C Company. The aim was to forecast the total sales for each product and store in the forthcoming month. Through participating in this competition, I had the opportunity to apply and refine my data science skills.
 
 # Data Overview
 You have been supplied with daily historical sales data. The objective is to predict the total quantity of products sold in each shop for the test set. It's noteworthy that the roster of shops and products undergoes minor alterations monthly. Developing a resilient model capable of managing such scenarios is a facet of the challenge
