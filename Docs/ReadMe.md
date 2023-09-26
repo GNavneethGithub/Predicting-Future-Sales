@@ -87,8 +87,7 @@ Subsequently, I experimented with several ensemble methods:
 2. SKlearn Linear Regression and ElasticNet
 3. Shallow Random Forest, fine-tuned with 5 folds (from 29 to 33)
 
-All these methods yielded an RMSE score that was marginally higher than the best model from LightGBM, hence LightGBM continues to surpass them in performance.
-
+This work is highly inspired and follow from "https://github.com/storieswithsiva"
 
 
 
