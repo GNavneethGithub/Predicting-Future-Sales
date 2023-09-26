@@ -87,7 +87,7 @@ Subsequently, I experimented with several ensemble methods:
 2. SKlearn Linear Regression and ElasticNet
 3. Shallow Random Forest, fine-tuned with 5 folds (from 29 to 33)
 
-This work is highly inspired and follow from "https://github.com/storieswithsiva"
+This work is highly inspired from the work of Siva ("https://github.com/storieswithsiva")
 
 
 
