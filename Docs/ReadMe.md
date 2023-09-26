@@ -64,6 +64,38 @@ The item counts for each shop-item pair per month (termed as 'target') were comp
 
 The procedure can be reviewed in this notebook, under the section titled 'Generating new_sales.csv'. The datasets produced from these steps will be stored with the name 'new_sales.csv'.
 
+## Generation of Lag Features
+Lag features represent values from previous time steps. I am creating lag features based on 'item_cnt', grouped by 'shop_id' and 'item_id'. The time steps considered are: 1, 2, 3, 5, and 12 months.
+
+All sales records prior to 2014 are discarded, as there wouldn't be any lag features before 2014 given the 12-month lag.
+
+These lag features emerged as the most crucial features in my dataset, as per the importance features identified by gradient boosting.
+
+Additional details can be explored in this notebook, under the section 'Generate lag feature new_sales_lag_after12.pickle'.
+
+# Cross-Validation
+Given the time-series nature of this data, it's necessary to pre-specify the data segments for training and testing. I have a function named get_cv_idxs in utils.py that returns a list of tuples for cross-validation purposes. I opted for a 6-fold cross-validation, spanning from date_block_num 28 to 33, and fortuitously, the CV score aligns well with the leaderboard score.
+
+The CV indices can be obtained through this custom function:
+
+```python
+cv = get_cv_idxs(dataframe, 28, 33)
+# dataframe must include date_block_num feature
+```
+The output from this function can be fed into sklearn's GridSearchCV for further analysis.
+
+# Ensemble Modeling
+Utilizing LightGBM, XGB model-1, and XGB model-2 out-of-fold features from preceding methods, I computed the pairwise differences among them, obtained the mean of all three LGB, XGB1, and XGB2 out-of-fold features, and incorporated the most significant features from feature importance: 'target_lag_1'.
+
+Subsequently, I experimented with several ensemble methods:
+
+1. Simple Average and Weighted Average
+2. SKlearn Linear Regression and ElasticNet
+3. Shallow Random Forest, fine-tuned with 5 folds (from 29 to 33)
+
+All these methods yielded an RMSE score that was marginally higher than the best model from LightGBM, hence LightGBM continues to surpass them in performance.
+
+
 
 
  
