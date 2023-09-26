@@ -76,12 +76,6 @@ Additional details can be explored in this notebook, under the section 'Generate
 # Cross-Validation
 Given the time-series nature of this data, it's necessary to pre-specify the data segments for training and testing. I have a function named get_cv_idxs in utils.py that returns a list of tuples for cross-validation purposes. I opted for a 6-fold cross-validation, spanning from date_block_num 28 to 33, and fortuitously, the CV score aligns well with the leaderboard score.
 
-The CV indices can be obtained through this custom function:
-
-```python
-cv = get_cv_idxs(dataframe, 28, 33)
-# dataframe must include date_block_num feature
-```
 The output from this function can be fed into sklearn's GridSearchCV for further analysis.
 
 # Ensemble Modeling
